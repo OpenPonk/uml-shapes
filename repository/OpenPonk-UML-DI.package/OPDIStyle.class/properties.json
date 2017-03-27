@@ -1,0 +1,14 @@
+{
+	"category" : "OpenPonk-UML-DI-DiagramInterchange",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"styledElement" ],
+	"name" : "OPDIStyle",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

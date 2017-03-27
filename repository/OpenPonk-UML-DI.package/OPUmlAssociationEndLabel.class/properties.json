@@ -1,0 +1,14 @@
+{
+	"category" : "OpenPonk-UML-DI-UML",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "OPUmlAssociationEndLabel",
+	"pools" : [
+		 ],
+	"super" : "OPUmlLabel",
+	"type" : "normal" }

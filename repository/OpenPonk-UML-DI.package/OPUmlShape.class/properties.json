@@ -1,0 +1,14 @@
+{
+	"category" : "OpenPonk-UML-DI-UML",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"rtElement" ],
+	"name" : "OPUmlShape",
+	"pools" : [
+		 ],
+	"super" : "OPUmlDiagramElement",
+	"type" : "normal" }

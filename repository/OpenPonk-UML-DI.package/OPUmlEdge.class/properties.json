@@ -1,0 +1,20 @@
+{
+	"category" : "OpenPonk-UML-DI-UML",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"source",
+		"target",
+		"waypoints",
+		"rtEdge",
+		"headDecorator",
+		"tailDecorator",
+		"view" ],
+	"name" : "OPUmlEdge",
+	"pools" : [
+		 ],
+	"super" : "OPUmlDiagramElement",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "OpenPonk-UML-DI-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "OPUmlLabelTest",
+	"pools" : [
+		 ],
+	"super" : "OPDITestCase",
+	"type" : "normal" }

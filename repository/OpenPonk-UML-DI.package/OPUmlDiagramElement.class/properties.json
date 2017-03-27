@@ -1,0 +1,19 @@
+{
+	"category" : "OpenPonk-UML-DI-UML",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"isIcon",
+		"owningElement",
+		"ownedElements",
+		"modelElement",
+		"sourceEdges",
+		"targetEdges" ],
+	"name" : "OPUmlDiagramElement",
+	"pools" : [
+		 ],
+	"super" : "OPDIDiagramElement",
+	"type" : "normal" }
