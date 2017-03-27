@@ -1,3 +1,0 @@
-*OpenPonk-UML-DI-Roassal2
-width: aValue
-	self rtElement width: aValue
