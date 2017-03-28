@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfUMLShapes",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "PeterUhnak 3/28/2017 09:45",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfUMLShapes",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }
