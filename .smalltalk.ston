@@ -7,6 +7,9 @@ SmalltalkCISpec {
 		}
 	],
 	#testing : {
-		#packages : [ 'OpenPonk-UML-DI' ]
+		#packages : [ 'OpenPonk-UML-DI' ],
+		#coverage : {
+			#packages : [ 'OpenPonk-UML-DI' ]
+		}
 	}
 }
