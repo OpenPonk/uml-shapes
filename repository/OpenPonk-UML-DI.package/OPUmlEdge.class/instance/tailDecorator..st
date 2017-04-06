@@ -1,4 +1,4 @@
 Roassal2 - accessing
 tailDecorator: aDecorator
 	tailDecorator := aDecorator.
-	rtEdge ifNotNil: [ rtEdge shape tail: (aDecorator asTail size: 8) ]
+	rtEdge ifNotNil: [ rtEdge shape tail: (aDecorator asTail) ]

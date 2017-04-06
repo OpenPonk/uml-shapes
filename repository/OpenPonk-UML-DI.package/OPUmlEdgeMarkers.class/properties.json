@@ -1,0 +1,14 @@
+{
+	"category" : "OpenPonk-UML-DI-Facades",
+	"classinstvars" : [
+		"current" ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "OPUmlEdgeMarkers",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

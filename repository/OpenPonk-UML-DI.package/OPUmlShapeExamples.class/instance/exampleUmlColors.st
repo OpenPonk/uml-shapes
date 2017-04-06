@@ -1,5 +1,5 @@
-as yet unclassified
-exampleColors
+sources
+exampleUmlColors
 |v builder es colors|
 builder := [ :c | | el lbl comp compLbl |
 el := OPUmlClassifierShape new.
@@ -32,6 +32,4 @@ es := colors collect: [ :each | builder value: each ].
 
 RTGridLayout new on: es.
 
-v @ RTDraggableView.
-
-v inspect
+^ v
