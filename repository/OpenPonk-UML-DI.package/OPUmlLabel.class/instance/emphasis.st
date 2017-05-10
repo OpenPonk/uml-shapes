@@ -1,6 +1,8 @@
 Roassal2 - accessing
 emphasis
 	| emph |
+	emphasis isBlock
+		ifTrue: [ emphasis value: self modelElement value: self localStyle ].
 	emph := Set new.
 	self style fontBold
 		ifTrue: [ emph add: TextEmphasis bold ].

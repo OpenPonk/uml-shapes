@@ -1,14 +1,11 @@
 {
-	"category" : "OpenPonk-UML-DI-Examples",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "PeterUhnak 4/6/2017 22:36",
-	"instvars" : [
-		 ],
-	"name" : "OPUmlShapeExamples",
-	"pools" : [
-		 ],
 	"super" : "RTAbstractExample",
-	"type" : "normal" }
+	"category" : "OpenPonk-UML-DI-Examples",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPUmlShapeExamples",
+	"type" : "normal"
+}

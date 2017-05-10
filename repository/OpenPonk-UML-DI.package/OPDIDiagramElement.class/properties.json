@@ -1,15 +1,14 @@
 {
-	"category" : "OpenPonk-UML-DI-DiagramInterchange",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "OpenPonk-UML-DI-DiagramInterchange",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"sharedStyle",
-		"localStyle" ],
+		"localStyle"
+	],
 	"name" : "OPDIDiagramElement",
-	"pools" : [
-		 ],
-	"super" : "Object",
-	"type" : "normal" }
+	"type" : "normal"
+}
