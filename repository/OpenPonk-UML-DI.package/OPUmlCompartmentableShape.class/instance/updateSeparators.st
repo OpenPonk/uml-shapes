@@ -1,9 +1,7 @@
 Roassal2 - updating
 updateSeparators
 	| x y |
-	self separators
-		select: [ :each | each view isNil ]
-		thenDo: [ :each | each renderIn: view ].
+	self separators select: [ :each | each view isNil ] thenDo: [ :each | view add: each ].
 	x := self encompassingRectangle left.
 	y := self labels
 		ifEmpty: [ self encompassingRectangle top ]
