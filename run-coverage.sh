@@ -2,7 +2,7 @@
 
 set -eu
 
-SMALLTALK_VM="$(find . -name pharo -type f -executable | head -n 1)"
+SMALLTALK_VM="$(find $SMALLTALK_CI_VMS -name pharo -type f -executable | head -n 1) --nodisplay"
 #SMALLTALK_VM="$(find . -name pharo-ui -type f -executable | head -n 1)"
 #SMALLTALK_CI_IMAGE="$(find . -name TravisCI.image | tail -n 1)"
 #TRAVIS_BUILD_DIR="/home/ubuntu/uml-shapes"
