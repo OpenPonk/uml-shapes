@@ -32,4 +32,4 @@ deploy:
   upload-dir: uml-shapes/$TRAVIS_BUILD_NUMBER
   skip-cleanup: true
   on:
-    branch: s3
+    branch: master
