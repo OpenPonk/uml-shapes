@@ -35,12 +35,16 @@ conf coverageDictionary at: #packages ifPresent: [ :pkgs |
 	].
 ].
 "
-
 }
 
 main() {
+	echo "build dir: $TRAVIS_BUILD_DIR"
+	echo "VM: $SMALLTALK_VM"
+	echo "image: $SMALLTALK_CI_IMAGE"
 	copy_image
+	echo "coverage image: $COVERAGE_IMAGE"
 	run_coverage
+	find $TRAVIS_BUILD_DIR/coverage-result
 }
 
 main

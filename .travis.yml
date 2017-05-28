@@ -20,5 +20,6 @@ deploy:
   region: eu-central-1
   local_dir: coverage-result
   upload-dir: uml-shapes/$TRAVIS_BUILD_NUMBER/
+  skip-cleanup: true
   on:
     branch: s3
