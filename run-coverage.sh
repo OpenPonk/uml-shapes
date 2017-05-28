@@ -37,6 +37,13 @@ conf coverageDictionary at: #packages ifPresent: [ :pkgs |
 "
 }
 
+print_startup_info() {
+	$SMALLTALK_VM $COVERAGE_IMAGE eval 'StartupPreferencesLoader preferencesGeneralFolder'
+	$SMALLTALK_VM $COVERAGE_IMAGE eval 'StartupPreferencesLoader preferencesVersionLoader'
+	find package-cache
+	find $($SMALLTALK_VM $COVERAGE_IMAGE eval 'StartupPreferencesLoader preferencesGeneralFolder')
+}
+
 main() {
 	echo "build dir: $TRAVIS_BUILD_DIR"
 	echo "VM: $SMALLTALK_VM"
@@ -45,6 +52,7 @@ main() {
 	echo "coverage image: $COVERAGE_IMAGE"
 	run_coverage
 	find $TRAVIS_BUILD_DIR/coverage-result
+	print_startup_info
 }
 
 main
