@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eu
+set -u
 
 SMALLTALK_VM="$(find $SMALLTALK_CI_VMS -name pharo -type f -executable | head -n 1) --nodisplay"
 #SMALLTALK_VM="$(find . -name pharo-ui -type f -executable | head -n 1)"
