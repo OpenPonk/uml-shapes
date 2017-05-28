@@ -12,10 +12,9 @@ smalltalk:
   - Pharo-6.0
 
 before_script:
-  - mkdir -p package-cache
-  - mkdir -p .config/pharo
+  - mkdir -p $HOME/.config/pharo
   - |
-    echo "StartupPreferencesLoader default executeAtomicItems: { StartupAction name: 'Cache' code: [ MCCacheRepository cacheDirectory: FileLocator home asFileReference / 'package-cache' ] runOnce: true }." >> .config/pharo/cache-folder.st
+    echo "StartupPreferencesLoader default executeAtomicItems: { StartupAction name: 'Cache' code: [ MCCacheRepository cacheDirectory: FileLocator home asFileReference / 'package-cache' ] runOnce: true }." >> $HOME/.config/pharo/cache-folder.st
 
 after_success:
   - ./run-coverage.sh

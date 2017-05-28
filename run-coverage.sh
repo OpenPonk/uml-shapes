@@ -39,9 +39,8 @@ conf coverageDictionary at: #packages ifPresent: [ :pkgs |
 
 print_startup_info() {
 	$SMALLTALK_VM $COVERAGE_IMAGE eval 'StartupPreferencesLoader preferencesGeneralFolder'
-	$SMALLTALK_VM $COVERAGE_IMAGE eval 'StartupPreferencesLoader preferencesVersionLoader'
 	find package-cache
-	find $($SMALLTALK_VM $COVERAGE_IMAGE eval 'StartupPreferencesLoader preferencesGeneralFolder')
+	find $($SMALLTALK_VM $COVERAGE_IMAGE eval 'StartupPreferencesLoader preferencesGeneralFolder fullName')
 }
 
 main() {
