@@ -1,5 +1,5 @@
 # uml-shapes
-[![Build Status](https://travis-ci.org/OpenPonk/uml-shapes.svg?branch=master)](https://travis-ci.org/OpenPonk/uml-shapes)
+[![Build Status](https://travis-ci.org/OpenPonk/uml-shapes.svg?branch=master)](https://travis-ci.org/OpenPonk/uml-shapes) [![Coverage Status](https://coveralls.io/repos/github/OpenPonk/uml-shapes/badge.svg?branch=master)](https://coveralls.io/github/OpenPonk/uml-shapes?branch=master)
 
 *part of [OpenPonk](https://github.com/OpenPonk/openponk) platform*
 
