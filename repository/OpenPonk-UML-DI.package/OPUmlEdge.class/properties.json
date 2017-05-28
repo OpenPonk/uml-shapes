@@ -1,10 +1,10 @@
 {
-	"category" : "OpenPonk-UML-DI-UML",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
+	"super" : "OPUmlDiagramElement",
+	"category" : "OpenPonk-UML-DI-UML",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"source",
 		"target",
@@ -12,9 +12,8 @@
 		"rtEdge",
 		"headDecorator",
 		"tailDecorator",
-		"view" ],
+		"view"
+	],
 	"name" : "OPUmlEdge",
-	"pools" : [
-		 ],
-	"super" : "OPUmlDiagramElement",
-	"type" : "normal" }
+	"type" : "normal"
+}

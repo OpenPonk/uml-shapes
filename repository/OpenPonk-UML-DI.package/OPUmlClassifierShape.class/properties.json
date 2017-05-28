@@ -1,14 +1,11 @@
 {
-	"category" : "OpenPonk-UML-DI-UML",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		 ],
-	"name" : "OPUmlClassifierShape",
-	"pools" : [
-		 ],
 	"super" : "OPUmlCompartmentableShape",
-	"type" : "normal" }
+	"category" : "OpenPonk-UML-DI-UML",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPUmlClassifierShape",
+	"type" : "normal"
+}

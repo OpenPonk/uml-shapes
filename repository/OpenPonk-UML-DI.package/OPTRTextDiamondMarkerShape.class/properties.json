@@ -1,15 +1,14 @@
 {
-	"category" : "OpenPonk-UML-DI-Trachel",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
+	"super" : "TRFilledDiamondShape",
+	"category" : "OpenPonk-UML-DI-Trachel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"text",
-		"fillColor" ],
+		"fillColor"
+	],
 	"name" : "OPTRTextDiamondMarkerShape",
-	"pools" : [
-		 ],
-	"super" : "TRFilledDiamondShape",
-	"type" : "normal" }
+	"type" : "normal"
+}

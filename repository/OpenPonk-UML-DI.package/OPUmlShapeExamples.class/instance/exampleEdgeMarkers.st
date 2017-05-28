@@ -6,8 +6,8 @@ markers := (OPUmlEdgeMarkers selectorsInProtocol: 'markers') select: [ :each | e
 offset := 0.
 markers
 	do: [ :each | 
-		from := OPUmlNameLabel new text: each.
-		to := OPUmlNameLabel new text: each.
+		from := OPUmlNameLabel new text: each asString.
+		to := OPUmlNameLabel new text: each asString.
 		(edge := OPUmlEdge new)
 			source: from;
 			target: to;
