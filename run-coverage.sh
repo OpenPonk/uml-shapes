@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+set -eu
+
+#SMALLTALK_VM="$(find . -name pharo -type f -executable | head -n 1)"
+#SMALLTALK_VM="$(find . -name pharo-ui -type f -executable | head -n 1)"
+#SMALLTALK_CI_IMAGE="$(find . -name TravisCI.image | tail -n 1)"
+#TRAVIS_BUILD_DIR="/home/ubuntu/uml-shapes"
+
 readonly COVERAGE_DIR=$(readlink -m $(dirname $SMALLTALK_CI_IMAGE))
 readonly COVERAGE_IMAGE=$COVERAGE_DIR/coverage.image
 
@@ -8,31 +15,32 @@ copy_image() {
 }
 
 run_coverage() {
-	$SMALLTALK_VM --nodisplay $COVERAGE_IMAGE "|file ci|
+	$SMALLTALK_VM $COVERAGE_IMAGE eval "|file ci|
 Gofer new smalltalkhubUser: 'ObjectProfile' project: 'Spy2'; configurationOf: 'Spy2'; loadBleedingEdge.
-file := FileLocator workingDirectory.
-ci := SmalltalkCISpec fromStream: file readStream.
-ci coverageEnabled.
-ci coverageDictionary at: #packages ifPresent: [ :pkgs |
-	pkgs do: [ :pkg | |coverage view|
-		coverage := Hapao2 runTestsForPackage: pkg.
+
+buildDir := '$TRAVIS_BUILD_DIR' asFileReference.
+coverageDir := buildDir / 'coverage-result'.
+confFile := buildDir / '.smalltalk.ston'.
+conf := SmalltalkCISpec fromStream: confFile readStream.
+conf coverageDictionary at: #packages ifPresent: [ :pkgs |
+	pkgs do: [ :pkgName | |coverage view pkgDir|
+		coverage := Hapao2 runTestsForPackageNamed: pkgName.
 		view := RTView new.
 		coverage visualizeOn: view.
+		pkgDir := coverageDir / pkgName.
+		pkgDir ensureCreateDirectory.
 		RTHTML5Exporter new
-			directory: FileLocator workingDirectory / 'coverage-result' / pkg name;
+			directory: pkgDir;
 			export: view.
 	].
-]."
-}
+].
+"
 
-upload_coverage() {
-	find coverage-result -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftpes://ghcoverage.peteruhnak.com/uml-shapes/$TRAVIS_BUILD_NUMBER/{} \;
 }
 
 main() {
 	copy_image
 	run_coverage
-	upload_coverage
 }
 
 main
