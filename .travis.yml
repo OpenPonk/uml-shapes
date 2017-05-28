@@ -9,7 +9,7 @@ smalltalk:
   - Pharo-6.0
 
 after_success:
-  - ./scripts/run-coverage.sh
+  - ./run-coverage.sh
 
 deploy:
   provider: s3
