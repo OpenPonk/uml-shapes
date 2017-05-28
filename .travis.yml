@@ -3,7 +3,7 @@ sudo: false
 
 cache:
   directories:
-    package-cache
+    $HOME/package-cache
 
 os:
   - linux
@@ -13,8 +13,9 @@ smalltalk:
 
 before_script:
   - mkdir -p $HOME/.config/pharo
+  - mkdir -p $HOME/package-cache
   - |
-    echo "StartupPreferencesLoader default executeAtomicItems: { StartupAction name: 'Cache' code: [ MCCacheRepository cacheDirectory: FileLocator home asFileReference / 'package-cache' ] runOnce: true }." >> $HOME/.config/pharo/cache-folder.st
+    echo "StartupPreferencesLoader default executeAtomicItems: { StartupAction name: 'Cache' code: [ MCCacheRepository cacheDirectory: FileLocator home asFileReference / 'package-cache'. self log: MCCacheRepository cacheDirectory ] runOnce: false }." >> $HOME/.config/pharo/cache-folder.st
 
 after_success:
   - ./run-coverage.sh

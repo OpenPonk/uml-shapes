@@ -39,7 +39,7 @@ conf coverageDictionary at: #packages ifPresent: [ :pkgs |
 
 print_startup_info() {
 	$SMALLTALK_VM $COVERAGE_IMAGE eval 'StartupPreferencesLoader preferencesGeneralFolder'
-	find package-cache
+	find #HOME/package-cache
 	find $($SMALLTALK_VM $COVERAGE_IMAGE eval 'StartupPreferencesLoader preferencesGeneralFolder fullName' | sed "s/^'\(.*\)'$/\1/g")
 }
 
