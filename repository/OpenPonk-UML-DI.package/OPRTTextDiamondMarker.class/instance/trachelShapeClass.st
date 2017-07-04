@@ -1,4 +1,4 @@
-as yet unclassified
+hooks
 trachelShapeClass
 	^ OPTRTextDiamondMarkerShape new
 		fillColor: fillColor;
