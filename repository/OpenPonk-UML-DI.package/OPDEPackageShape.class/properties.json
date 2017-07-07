@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "RTAbstractMultiElement",
+	"category" : "OpenPonk-UML-DI-Roassal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"labelText",
+		"stereotypeText",
+		"showTriangle"
+	],
+	"name" : "OPDEPackageShape",
+	"type" : "normal"
+}
