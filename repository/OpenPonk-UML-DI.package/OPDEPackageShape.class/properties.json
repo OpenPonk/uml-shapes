@@ -8,7 +8,8 @@
 	"instvars" : [
 		"labelText",
 		"stereotypeText",
-		"showTriangle"
+		"showTriangle",
+		"style"
 	],
 	"name" : "OPDEPackageShape",
 	"type" : "normal"

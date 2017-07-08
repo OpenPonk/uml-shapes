@@ -1,3 +1,3 @@
 creating - subelements
 earScaling
-	^ 0.8
+	^ 0.6

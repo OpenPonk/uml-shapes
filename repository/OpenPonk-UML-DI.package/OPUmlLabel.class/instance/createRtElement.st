@@ -1,7 +1,7 @@
 Roassal2 - manipulation
 createRtElement
 	^ RTStyledLabel new
-		height: self style fontSize;
+		height: #fontSize;
 		color: #fontColor;
 		text: #text;
 		emphasis: #emphasis;

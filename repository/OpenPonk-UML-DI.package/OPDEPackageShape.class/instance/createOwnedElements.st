@@ -1,6 +1,6 @@
 creating - subelements
 createOwnedElements
-	| mainLabel triangle ear mainStereotype |
+	| mainLabel triangle ear mainStereotype earOverlay |
 	ear := RTBox new
 		width: self minWidth * self earScaling;
 		height: 25;
@@ -12,7 +12,7 @@ createOwnedElements
 		path: 'M0,0L10,-10L20,0z';
 		fillColor: [ :aModel | 
 			self showTriangle
-				ifTrue: [ self shape colorFor: self ]
+				ifTrue: [ Color veryVeryLightGray ]
 				ifFalse: [ Color transparent ] ];
 		borderColor: [ :aModel | 
 			self showTriangle
@@ -23,13 +23,13 @@ createOwnedElements
 	self add: triangle.
 	mainLabel := RTLabel new
 		text: #labelText;
-		color: Color black;
+		color: [ self fontColor ];
 		elementOn: self.
 	self add: mainLabel.
 	mainStereotype := RTLabel new
 		text: #stereotypeText;
 		height: (mainLabel shape heightFor: mainLabel) - 2;
-		color: Color black;
+		color: [ self fontColor ];
 		elementOn: self.
 	self add: mainStereotype.
 	(RTConstraint on: ear background: self)
@@ -47,7 +47,8 @@ createOwnedElements
 		top;
 		outer;
 		stick.
-	self addCallback: (TRExtentCallback block: [ :sh :st | ear width: self width * self earScaling ]).
+	self
+		addCallback: (TRExtentCallback block: [ :sh :st | ear width: self width * self earScaling ]).
 	mainLabel
 		addCallback:
 			(TRExtentCallback
