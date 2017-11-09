@@ -13,6 +13,7 @@ baseline: spec
 					with: [ spec
 						className: #ConfigurationOfFame;
 						versionString: #development;
+						loads: #(Core);
 						repository: 'http://www.smalltalkhub.com/mc/Moose/Fame/main' ].
 			spec package: 'OpenPonk-UML-DI' with: [ spec requires: #('Roassal2' 'Fame') ].
 			spec group: 'default' with: #('OpenPonk-UML-DI') ]
