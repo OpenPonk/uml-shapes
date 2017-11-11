@@ -1,7 +1,8 @@
 accessing
 target: aDiagramElement
-	target := FMMultivalueLink
+	target := SRToOneLink
 		on: self
-		update: #targetEdges
-		from: self target
+		slot: #target
+		oppositeSlot: #targetEdges
+		updateFrom: target
 		to: aDiagramElement

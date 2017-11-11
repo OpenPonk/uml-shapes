@@ -1,7 +1,8 @@
 accessing
 source: aDiagramElement
-	source := FMMultivalueLink
+	source := SRToOneLink
 		on: self
-		update: #sourceEdges
-		from: self source
+		slot: #source
+		oppositeSlot: #sourceEdges
+		updateFrom: source
 		to: aDiagramElement

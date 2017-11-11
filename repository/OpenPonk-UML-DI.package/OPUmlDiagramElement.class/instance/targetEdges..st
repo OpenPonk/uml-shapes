@@ -1,3 +1,5 @@
 accessing
 targetEdges: aCollection
-	targetEdges value: aCollection
+	targetEdges
+		removeAll;
+		addAll: aCollection

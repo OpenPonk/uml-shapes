@@ -4,11 +4,9 @@ initialize
 	isIcon := false.
 	localStyle := nil.
 	sharedStyle := nil.
-	ownedElements := FMNullMultivalueLink
-		on: self
-		opposite: #owningElement:
-		selector: #ownedElements.
+	ownedElements := SRToManyLink on: self slot: #ownedElements oppositeSlot: #owningElement.
 	owningElement := nil.
 	modelElement := nil.
-	sourceEdges := FMNullMultivalueLink on: self opposite: #source: selector: #sourceEdges.
-	targetEdges := FMNullMultivalueLink on: self opposite: #target: selector: #targetEdges
+	self flag: 'This looks strange'.
+	sourceEdges := SRToManyLink on: self slot: #sourceEdges oppositeSlot: #source.
+	targetEdges := SRToManyLink on: self slot: #targetEdges oppositeSlot: #target.

@@ -1,7 +1,8 @@
 accessing
 owningElement: aDiagramElement
-	owningElement := FMMultivalueLink
+	owningElement := SRToOneLink
 		on: self
-		update: #ownedElements
-		from: self owningElement
+		slot: #owningElement
+		oppositeSlot: #ownedElements
+		updateFrom: owningElement
 		to: aDiagramElement

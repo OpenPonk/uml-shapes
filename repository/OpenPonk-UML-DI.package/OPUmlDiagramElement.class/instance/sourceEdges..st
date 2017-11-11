@@ -1,3 +1,5 @@
 accessing
 sourceEdges: aCollection
-	sourceEdges value: aCollection
+	sourceEdges
+		removeAll;
+		addAll: aCollection

@@ -1,3 +1,5 @@
 accessing
 ownedElements: aCollection
-	ownedElements value: aCollection
+	ownedElements
+		removeAll;
+		addAll: aCollection
