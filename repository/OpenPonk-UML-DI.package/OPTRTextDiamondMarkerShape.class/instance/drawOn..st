@@ -21,7 +21,7 @@ drawOn: athensCanvas
 	middle := endPoint - (unit * size).
 	athensCanvas pathTransform
 		restoreAfter: [ athensCanvas pathTransform
-				translateBy: middle;
+				translateBy: middle asFloatPoint;
 				translateBy: ((size negated / 2) @ (font height / 4)) asFloatPoint.
 			athensCanvas setFont: font.
 			athensCanvas setPaint: self fillColor negated.
