@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OPRTHighlighter",
+	"category" : "OpenPonk-UML-DI-Roassal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPRTUmlEdgeHighlighter",
+	"type" : "normal"
+}

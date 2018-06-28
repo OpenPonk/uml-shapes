@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "OPRTHighlighterTest",
+	"category" : "OpenPonk-UML-DI-Roassal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"edge"
+	],
+	"name" : "OPRTUmlEdgeHighlighterTest",
+	"type" : "normal"
+}
