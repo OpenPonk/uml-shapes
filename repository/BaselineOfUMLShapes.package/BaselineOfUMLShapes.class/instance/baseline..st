@@ -7,7 +7,7 @@ baseline: spec
 				project: 'Roassal2'
 				with: [ spec
 						className: #ConfigurationOfRoassal2;
-						versionString: #development;
+						versionString: #stable;
 						repository: 'http://www.smalltalkhub.com/mc/ObjectProfile/Roassal2/main' ].
 			spec
 				baseline: 'SynchronizedLinks'
