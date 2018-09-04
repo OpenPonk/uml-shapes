@@ -9,4 +9,4 @@ renderIn: aView
 					[ :shape :step | 
 					self figures translateBy: step.
 					self separators translateBy: step ]).
-	self changed
+	self updateContent

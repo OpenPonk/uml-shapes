@@ -14,5 +14,4 @@ updateSeparators
 			each rtElement translateTo: x @ y.
 			each rtElement update.
 			each ownedElements
-				ifNotEmpty: [ y := each ownedElements last encompassingRectangle bottom ] ].
-	view signalUpdate
+				ifNotEmpty: [ y := each ownedElements last encompassingRectangle bottom ] ]
