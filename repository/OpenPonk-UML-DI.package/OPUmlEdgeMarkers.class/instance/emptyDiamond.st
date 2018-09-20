@@ -1,3 +1,0 @@
-markers
-emptyDiamond
-	^ OPRTTextDiamondMarker empty

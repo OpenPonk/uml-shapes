@@ -1,3 +1,0 @@
-accessing
-targetEdges
-	^ self subclassResponsibility

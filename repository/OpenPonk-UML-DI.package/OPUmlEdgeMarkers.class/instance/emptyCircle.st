@@ -1,3 +1,0 @@
-markers
-emptyCircle
-	^ RTEmptyCircle
