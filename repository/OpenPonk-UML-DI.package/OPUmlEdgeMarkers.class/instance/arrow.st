@@ -1,3 +1,0 @@
-markers
-arrow
-	^ RTEmptyNarrowArrow

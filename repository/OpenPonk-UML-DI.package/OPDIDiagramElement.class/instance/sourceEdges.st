@@ -1,3 +1,0 @@
-accessing
-sourceEdges
-	^ self subclassResponsibility

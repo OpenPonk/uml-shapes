@@ -1,3 +1,0 @@
-accessing
-owningElement
-	^ self subclassResponsibility
