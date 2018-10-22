@@ -58,23 +58,25 @@ OPUmlCompartmentableShape >> labels [
 
 { #category : #'Roassal2 - updating' }
 OPUmlCompartmentableShape >> layout [
-	| diffW diffH |
+	| rect minSize off |
 	RTVerticalLineLayout new
 		gapSize: 0;
 		on: self figures.
-	RTNestingBehavior new
-		centerOn: self rtElement elements: self figures;
-		resize: self rtElement for: self figures padding: 5.
-	diffW := 140 - self rtElement width max: 0.
-	diffH := 70 - self rtElement height max: 0.
-	diffW > 0
-		ifTrue: [ self rtElement width: 140 ].
-	diffH > 0
-		ifTrue: [ self rtElement height: 70 ].
-	self figures translateBy: diffW @ diffH / -2.
-	self labels
-		do:
-			[ :each | each translateTo: self rtElement position x @ each rtElement position y - (0 @ 2.5) ]
+	rect := self figures encompassingRectangle.
+	rect := rect expandBy: 2 @ 0.
+	(rect width % 20) isZero
+		ifFalse: [ rect := rect withWidth: (rect width roundUpTo: 20) ].
+	(rect height % 20) isZero
+		ifFalse: [ rect := rect withHeight: (rect height roundUpTo: 20) ].
+	minSize := 0 @ 0 corner: 140 @ 60.
+	rect width < minSize width
+		ifTrue: [ rect := rect withWidth: minSize width ].
+	rect height < minSize height
+		ifTrue: [ rect := rect withHeight: minSize height ].
+	self rtElement trachelShape extent: rect width @ rect height.
+	off := self rtElement trachelShape encompassingRectangle center - rect center.
+	off := off asIntegerPoint + (5 @ 5).
+	self figures do: [ :e | e translateBy: off ]
 ]
 
 { #category : #'Roassal2 - accessing' }
