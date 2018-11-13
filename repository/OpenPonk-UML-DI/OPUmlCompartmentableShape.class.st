@@ -63,7 +63,7 @@ OPUmlCompartmentableShape >> layout [
 		gapSize: 0;
 		on: self figures.
 	rect := self figures encompassingRectangle.
-	rect := rect expandBy: 2 @ 0.
+	rect := rect expandBy: 2 @ 2.
 	(rect width % 20) isZero
 		ifFalse: [ rect := rect withWidth: (rect width roundUpTo: 20) ].
 	(rect height % 20) isZero
