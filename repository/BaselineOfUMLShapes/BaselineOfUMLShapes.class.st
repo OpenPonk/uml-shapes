@@ -20,7 +20,7 @@ BaselineOfUMLShapes >> baseline: spec [
 			spec
 				baseline: 'SynchronizedLinks'
 				with: [ spec
-						repository: 'github://openponk/synchronized-links:v1.x/repository' ].
+						repository: 'github://openponk/synchronized-links/repository' ].
 			spec
 				package: 'OpenPonk-UML-DI'
 				with: [ spec requires: #('Roassal2' 'SynchronizedLinks') ].
