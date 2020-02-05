@@ -10,7 +10,7 @@ Class {
 		'tailDecorator',
 		'view'
 	],
-	#category : 'OpenPonk-UML-DI-UML'
+	#category : #'OpenPonk-UML-DI-UML'
 }
 
 { #category : #'Roassal2 - updating' }
@@ -80,7 +80,11 @@ OPUmlEdge >> remove [
 	self source: nil.
 	self target: nil.
 	self view ifNil: [ ^ self ].
-	(self ownedElements select: [ :each | each view isNotNil ]) do: #remove.
+	(self ownedElements select: [ :each | each view isNotNil ])
+		do: [ :each | 
+			each
+				owningElement: nil;
+				remove ].
 	[ self ownedElements notEmpty ]
 		whileTrue: [ self ownedElements anyOne owningElement: nil ].
 	self rtEdge view ifNotNil: [ self rtEdge remove ].
