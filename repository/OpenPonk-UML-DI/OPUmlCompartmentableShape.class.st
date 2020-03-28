@@ -6,7 +6,7 @@ Class {
 		'separators',
 		'oldExtent'
 	],
-	#category : 'OpenPonk-UML-DI-UML'
+	#category : #'OpenPonk-UML-DI-UML'
 }
 
 { #category : #'Roassal2 - accessing' }
@@ -51,9 +51,8 @@ OPUmlCompartmentableShape >> initialize [
 
 { #category : #'Roassal2 - accessing' }
 OPUmlCompartmentableShape >> labels [
-	self flag: 'I have no idea why there is sorting by priority'.
-	^ ((self ownedElements select: [ :each | each isKindOf: OPUmlLabel ])
-		sorted: [ :a :b | a class priority < b class priority ]) asGroup
+	^ (self ownedElements select: [ :each | each isKindOf: OPUmlLabel ])
+		asGroup
 ]
 
 { #category : #'Roassal2 - updating' }
@@ -132,9 +131,12 @@ OPUmlCompartmentableShape >> update: aParameter [
 OPUmlCompartmentableShape >> updateContent [
 	view ifNil: [ ^ self ].
 	self rtElement update.
-	self figures select: [ :each | each view isNil ] thenDo: [ :each | each renderIn: view ].
+	self figures
+		select: [ :each | each view isNil ]
+		thenDo: [ :each | each renderIn: view ].
 	self layout.
-	self updateSeparators
+	self updateSeparators.
+	self rtElement trachelShape triggerCallbacksForStep: 0 @ 0
 ]
 
 { #category : #'Roassal2 - updating' }
