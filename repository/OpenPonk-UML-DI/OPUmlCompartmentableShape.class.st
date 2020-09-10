@@ -11,7 +11,8 @@ Class {
 
 { #category : #'Roassal2 - accessing' }
 OPUmlCompartmentableShape >> compartmentFigures [
-	^ (self compartments flatCollect: #ownedElements) asGroup
+
+	^ RTGroup withAll: (self compartments flatCollect: #ownedElements)
 ]
 
 { #category : #accessing }
@@ -32,7 +33,8 @@ OPUmlCompartmentableShape >> createRtElement [
 
 { #category : #'Roassal2 - accessing' }
 OPUmlCompartmentableShape >> figures [
-	^ (self labels , self compartmentFigures) asGroup
+
+	^ RTGroup withAll: self labels , self compartmentFigures
 ]
 
 { #category : #'Roassal2 - manipulation' }
@@ -51,8 +53,9 @@ OPUmlCompartmentableShape >> initialize [
 
 { #category : #'Roassal2 - accessing' }
 OPUmlCompartmentableShape >> labels [
-	^ (self ownedElements select: [ :each | each isKindOf: OPUmlLabel ])
-		asGroup
+
+	^ RTGroup withAll:
+		  (self ownedElements select: [ :each | each isKindOf: OPUmlLabel ])
 ]
 
 { #category : #'Roassal2 - updating' }
