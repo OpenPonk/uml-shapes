@@ -133,6 +133,7 @@ OPUmlCompartmentableShape >> update: aParameter [
 { #category : #'Roassal2 - updating' }
 OPUmlCompartmentableShape >> updateContent [
 	view ifNil: [ ^ self ].
+	self rtElement shape borderColor: self style strokeColor.
 	self rtElement update.
 	self figures
 		select: [ :each | each view isNil ]
