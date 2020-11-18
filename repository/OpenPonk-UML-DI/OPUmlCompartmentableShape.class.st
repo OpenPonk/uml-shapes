@@ -33,13 +33,18 @@ OPUmlCompartmentableShape >> createRtElement [
 
 { #category : #'Roassal2 - accessing' }
 OPUmlCompartmentableShape >> figures [
-
-	^ RTGroup withAll: self labels , self compartmentFigures
+	^ RTGroup withAll: self labels , self compartmentFigures , self icons
 ]
 
 { #category : #'Roassal2 - manipulation' }
 OPUmlCompartmentableShape >> figuresDo: aBlock [
 	^ self figures do: aBlock
+]
+
+{ #category : #'Roassal2 - accessing' }
+OPUmlCompartmentableShape >> icons [
+	^ RTGroup
+		withAll: (self ownedElements select: [ :each | each isKindOf: OPUmlIcon ])
 ]
 
 { #category : #initialization }
@@ -76,7 +81,8 @@ OPUmlCompartmentableShape >> layout [
 	rect height < minSize height
 		ifTrue: [ rect := rect withHeight: minSize height ].
 	self rtElement trachelShape extent: rect width @ rect height.
-	off := self rtElement trachelShape encompassingRectangle center - rect center.
+	off := self rtElement trachelShape encompassingRectangle center
+		- rect center.
 	off := off asIntegerPoint + (5 @ 5).
 	self figures do: [ :e | e translateBy: off ]
 ]
