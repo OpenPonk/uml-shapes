@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'rtElement'
 	],
-	#category : 'OpenPonk-UML-DI-UML'
+	#category : #'OpenPonk-UML-DI-UML'
 }
 
 { #category : #Roassal2 }
@@ -52,6 +52,11 @@ OPUmlShape >> height: aValue [
 { #category : #Roassal2 }
 OPUmlShape >> position [
 	^ self rtElement position
+]
+
+{ #category : #rendering }
+OPUmlShape >> renderIn: aView [
+	self subclassResponsibility
 ]
 
 { #category : #'Roassal2 - accessing' }
