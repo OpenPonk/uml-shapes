@@ -28,7 +28,8 @@ OPUmlClassifierShape >> initialize [
 	commentIcon display: [ self hasComments ].
 	commentIcon form: (self iconNamed: #announcement).
 	commentIcon localStyle: OPUmlStyle new.
-	commentIcon owningElement: self
+	commentIcon owningElement: self.
+	commentBlock := #()
 ]
 
 { #category : #'Roassal2 - updating' }
