@@ -38,6 +38,11 @@ OPUmlIcon >> initialize [
 	isIcon := true
 ]
 
+{ #category : #removing }
+OPUmlIcon >> remove [
+	self rtElement remove
+]
+
 { #category : #rendering }
 OPUmlIcon >> renderIn: aView [
 	view ifNotNil: [ ^ self ].

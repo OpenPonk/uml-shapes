@@ -5,7 +5,7 @@ Class {
 		'sharedStyle',
 		'localStyle'
 	],
-	#category : 'OpenPonk-UML-DI-DiagramInterchange'
+	#category : #'OpenPonk-UML-DI-DiagramInterchange'
 }
 
 { #category : #testing }
@@ -36,6 +36,11 @@ OPDIDiagramElement >> ownedElements [
 { #category : #accessing }
 OPDIDiagramElement >> owningElement [
 	^ self subclassResponsibility
+]
+
+{ #category : #removing }
+OPDIDiagramElement >> remove [
+	self subclassResponsibility
 ]
 
 { #category : #accessing }
