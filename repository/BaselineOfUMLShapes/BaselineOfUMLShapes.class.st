@@ -10,6 +10,7 @@ Class {
 { #category : #baseline }
 BaselineOfUMLShapes >> baseline: spec [
 	<baseline>
+	"yolo"
 	spec
 		for: #common
 		do: [ spec
