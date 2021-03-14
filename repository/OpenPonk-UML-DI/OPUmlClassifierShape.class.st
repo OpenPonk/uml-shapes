@@ -18,7 +18,8 @@ OPUmlClassifierShape >> hasComments [
 	| comments |
 	comments := commentBlock value.
 	^ comments isNotEmpty
-		and: [ comments anySatisfy: [ :any | any body isNotEmpty ] ]
+		and: [ comments
+				anySatisfy: [ :any | any body isNotNil and: [ any body isNotEmpty ] ] ]
 ]
 
 { #category : #initialization }
