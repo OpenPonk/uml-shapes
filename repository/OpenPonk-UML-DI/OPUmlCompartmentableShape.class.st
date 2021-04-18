@@ -67,7 +67,7 @@ OPUmlCompartmentableShape >> labels [
 OPUmlCompartmentableShape >> layout [
 	| rect off encompassingRect |
 	RTVerticalLineLayout new
-		gapSize: 0;
+		gapSize: 0.5;
 		on: self figures.
 	encompassingRect := self figures encompassingRectangle.
 	rect := (encompassingRect
