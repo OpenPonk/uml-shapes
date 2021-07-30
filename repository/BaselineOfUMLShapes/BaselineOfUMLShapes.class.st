@@ -14,7 +14,8 @@ BaselineOfUMLShapes >> baseline: spec [
 	spec for: #common do: [ 
 		spec
 			baseline: 'Roassal2'
-			with: [ spec repository: 'github://hernanmd/Roassal2:934e5ab/src' ].
+			with: [ 
+			spec repository: 'github://ObjectProfile/Roassal2:v2.0.2/src' ].
 		spec
 			baseline: 'SynchronizedLinks'
 			with: [ 
