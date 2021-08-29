@@ -65,31 +65,19 @@ OPUmlCompartmentableShape >> labels [
 
 { #category : #'Roassal2 - updating' }
 OPUmlCompartmentableShape >> layout [
-	| rect minSize off |
+	| rect off encompassingRect |
 	RTVerticalLineLayout new
-		gapSize: 0;
+		gapSize: 0.5;
 		on: self figures.
-	rect := self figures encompassingRectangle.
-	rect := rect expandBy: 2 @ 2.
-	(rect width % 20) isZero
-		ifFalse: [ rect := rect withWidth: (rect width roundUpTo: 20) ].
-	(rect height % 20) isZero
-		ifFalse: [ rect := rect withHeight: (rect height roundUpTo: 20) ].
-	minSize := 0 @ 0 corner: 140 @ 60.
-	rect width < minSize width
-		ifTrue: [ rect := rect withWidth: minSize width ].
-	rect height < minSize height
-		ifTrue: [ rect := rect withHeight: minSize height ].
+	encompassingRect := self figures encompassingRectangle.
+	rect := (encompassingRect
+		withWidth: ((encompassingRect width + 8 roundUpTo: 20) max: 140))
+		withHeight: ((encompassingRect height + 4 roundUpTo: 20) max: 60).
 	self rtElement trachelShape extent: rect width @ rect height.
 	off := self rtElement trachelShape encompassingRectangle center
 		- rect center.
 	off := off asIntegerPoint + (5 @ 5).
 	self figures do: [ :e | e translateBy: off ]
-]
-
-{ #category : #'Roassal2 - accessing' }
-OPUmlCompartmentableShape >> minWidth [
-	^ 500 max: (self ownedElements ifEmpty: [ 0 ] ifNotEmpty: [ :f | f max: #minWidth ])
 ]
 
 { #category : #'Roassal2 - updating' }

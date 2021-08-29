@@ -1,7 +1,7 @@
 Class {
 	#name : #OPUmlEdgeTest,
 	#superclass : #OPDITestCase,
-	#category : 'OpenPonk-UML-DI-Tests'
+	#category : #'OpenPonk-UML-DI-Tests'
 }
 
 { #category : #accessing }
@@ -42,6 +42,7 @@ OPUmlEdgeTest >> testRemoveDetachFromEnds [
 
 { #category : #tests }
 OPUmlEdgeTest >> testRemoveFromView [
+
 	| lbl v |
 	(lbl := OPUmlLabel new) owningElement: element.
 	v := RTView new.

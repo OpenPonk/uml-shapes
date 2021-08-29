@@ -20,16 +20,16 @@ OPUmlEdge >> changed [
 
 { #category : #'Roassal2 - manipulation' }
 OPUmlEdge >> createConnection [
-	^ (#OPRTStyledConnection asClass new
-		attachPoint: (#OPRTOrthogonalAttachPoint asClass new offset: 30);
+	^ (OPRTStyledConnection new
+		attachPoint: (OPRTOrthogonalAttachPoint new offset: 30);
 		color: self style strokeColor;
 		head: (self headDecorator asHead color: Color yellow);
 		tail: self tailDecorator asTail;
 		width: self style strokeWidth;
 		edgeFrom: source rtElement to: target rtElement)
+		@ OPRTConnectionHandles;
 		model: self;
 		yourself
-
 ]
 
 { #category : #'Roassal2 - manipulation' }
