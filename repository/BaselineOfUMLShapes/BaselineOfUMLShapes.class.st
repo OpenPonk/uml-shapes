@@ -19,7 +19,7 @@ BaselineOfUMLShapes >> baseline: spec [
 		spec
 			baseline: 'SynchronizedLinks'
 			with: [ 
-			spec repository: 'github://openponk/synchronized-links:v2.1.x/repository' ].
+			spec repository: 'github://openponk/synchronized-links:v3.0.x/repository' ].
 		spec
 			baseline: 'OpenPonk'
 			with: [ spec repository: 'github://openponk/openponk:v3.0.x/repository' ].
