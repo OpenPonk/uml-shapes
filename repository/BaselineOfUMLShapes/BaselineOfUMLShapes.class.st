@@ -12,10 +12,10 @@ BaselineOfUMLShapes >> baseline: spec [
 
 	<baseline>
 	spec for: #common do: [ 
-		spec
-			baseline: 'Roassal2'
-			with: [ 
-			spec repository: 'github://ObjectProfile/Roassal2:v2.0.2/src' ].
+		spec baseline: 'Roassal2' with: [ 
+			spec
+				repository: 'github://ObjectProfile/Roassal2:v2.0.2/src';
+				loads: 'Core' ].
 		spec
 			baseline: 'SynchronizedLinks'
 			with: [ 
@@ -25,7 +25,22 @@ BaselineOfUMLShapes >> baseline: spec [
 			with: [ spec repository: 'github://openponk/openponk:v3.0.x/repository' ].
 		spec
 			package: 'OpenPonk-UML-DI'
-			with: [ spec requires: #( 'Roassal2' 'SynchronizedLinks' ) ].
+			with: [ spec requires: #( 'Roassal2' 'SynchronizedLinks' ) ];
+			preLoadDoIt: #loadPetitParser.
 		spec group: 'plugin' with: #( 'OpenPonk-UML-DI' ).
 		spec group: 'default' with: #( 'OpenPonk' 'plugin' ) ]
+]
+
+{ #category : #'as yet unclassified' }
+BaselineOfUMLShapes >> loadPetitParser [
+
+	"PetitParser is not needed by UML Shapes. It is needed by BormEditor, but due to Pharo bug https://github.com/pharo-project/pharo/issues/9913 it must be always loaded before Roassal2 in Pharo 10"
+
+	Smalltalk at: #BaselineOfPetitParser ifPresent: [ ^ self ].
+	Metacello new
+		baseline: 'PetitParser';
+		repository: 'github://moosetechnology/PetitParser:v2.x.x/src';
+		load:
+			#( 'Core' 'Tests' 'Examples' 'Islands' 'Analyzer' 'Preprocessor'
+			   'Indent' 'Extension' 'TestsExtension' 'Parser' )
 ]
