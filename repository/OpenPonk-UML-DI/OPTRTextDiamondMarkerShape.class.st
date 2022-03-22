@@ -1,12 +1,17 @@
 Class {
 	#name : #OPTRTextDiamondMarkerShape,
-	#superclass : #TRFilledDiamondShape,
+	#superclass : #TRDiamondShape,
 	#instVars : [
 		'text',
 		'fillColor'
 	],
-	#category : 'OpenPonk-UML-DI-Trachel'
+	#category : #'OpenPonk-UML-DI-Trachel'
 }
+
+{ #category : #visiting }
+OPTRTextDiamondMarkerShape >> accept: aVisitor onStart: aBoolean [
+	aVisitor visitTextDiamondShape: self onStart: aBoolean
+]
 
 { #category : #hooks }
 OPTRTextDiamondMarkerShape >> computePath [
@@ -82,6 +87,19 @@ OPTRTextDiamondMarkerShape >> from: aPoint to: anotherPoint width: aNumber size:
 		size: anotherNumber;
 		color: aColor;
 		strokePaint: anotherColor
+]
+
+{ #category : #initialization }
+OPTRTextDiamondMarkerShape >> initialize [
+
+	super initialize.
+	text := ''
+]
+
+{ #category : #accessing }
+OPTRTextDiamondMarkerShape >> text [
+
+	^ text
 ]
 
 { #category : #accessing }
