@@ -14,7 +14,7 @@ BaselineOfUMLShapes >> baseline: spec [
 	spec for: #common do: [ 
 		spec baseline: 'Roassal2' with: [ 
 			spec
-				repository: 'github://OpenPonk/Roassal2';
+				repository: 'github://OpenPonk/Roassal2:Pharo10';
 				loads: 'Core' ].
 		spec
 			baseline: 'SynchronizedLinks'
