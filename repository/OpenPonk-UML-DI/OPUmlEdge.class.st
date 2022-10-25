@@ -118,6 +118,20 @@ OPUmlEdge >> source: aDiagramElement [
 		to: aDiagramElement
 ]
 
+{ #category : #'Roassal2 - manipulation' }
+OPUmlEdge >> switchSourceAndTarget [
+
+	| originalSource originalFrom originalTo |
+	originalSource := self source.
+	self source: self target.
+	self target: originalSource.
+	originalFrom := rtEdge from.
+	originalTo := rtEdge to.
+	rtEdge to: RTElement new. "otherwise old to == new from and old to gets removed"
+	rtEdge from: originalTo.
+	rtEdge to: originalFrom
+]
+
 { #category : #'Roassal2 - accessing' }
 OPUmlEdge >> tailDecorator [
 	^ tailDecorator ifNil: [ tailDecorator := OPUmlEdgeMarkers none ]
