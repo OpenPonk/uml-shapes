@@ -35,11 +35,14 @@ OPUmlClassifierShape >> initialize [
 
 { #category : #'Roassal2 - updating' }
 OPUmlClassifierShape >> layout [
+
 	super layout.
-	commentIcon
-		translateTo:
-			self rtElement encompassingRectangle bottomRight
-				- (commentIcon rtElement extent / 2) - (2 @ 2)
+	self labels do: [ :each | 
+		each translateTo:
+			self encompassingRectangle center x @ each position y ].
+	commentIcon translateTo:
+		self rtElement encompassingRectangle bottomRight
+		- (commentIcon rtElement extent / 2) - (2 @ 2)
 ]
 
 { #category : #'Roassal2 - updating' }

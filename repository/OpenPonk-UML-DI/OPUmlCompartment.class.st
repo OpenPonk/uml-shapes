@@ -4,12 +4,11 @@ Class {
 	#instVars : [
 		'rtElement'
 	],
-	#category : 'OpenPonk-UML-DI-UML'
+	#category : #'OpenPonk-UML-DI-UML'
 }
 
 { #category : #accessing }
 OPUmlCompartment >> compartmentedShape [
-	<DCType: #OPUmlCompartmentableShape opposite: #compartments multiplicity: #(1)>
 	^ self owningElement
 ]
 

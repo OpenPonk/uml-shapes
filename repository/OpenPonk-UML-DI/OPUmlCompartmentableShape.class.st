@@ -17,7 +17,6 @@ OPUmlCompartmentableShape >> compartmentFigures [
 
 { #category : #accessing }
 OPUmlCompartmentableShape >> compartments [
-	<DCType: #OPUmlCompartment opposite: #compartmentedShape multiplicity: #(#*)>
 	^ self ownedElements select: [ :each | each isKindOf: OPUmlCompartment ]
 ]
 
