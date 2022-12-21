@@ -16,16 +16,20 @@ BaselineOfUMLShapes >> baseline: spec [
 			spec
 				repository: 'github://OpenPonk/Roassal2:Pharo10';
 				loads: 'Core' ].
+		spec baseline: 'Roassal3' with: [ 
+			spec
+				repository: 'github://ObjectProfile/Roassal3:v0.9.9k';
+				loads: #( Full ) ].
 		spec
 			baseline: 'SynchronizedLinks'
 			with: [ 
 			spec repository: 'github://openponk/synchronized-links/repository' ].
 		spec
 			baseline: 'OpenPonk'
-			with: [ spec repository: 'github://openponk/openponk' ].
+			with: [ spec repository: 'github://openponk/openponk:dev/roassal3' ].
 		spec
 			package: 'OpenPonk-UML-DI'
-			with: [ spec requires: #( 'Roassal2' 'SynchronizedLinks' ) ];
+			with: [ spec requires: #( 'Roassal2' 'Roassal3' 'SynchronizedLinks' ) ];
 			preLoadDoIt: #loadPetitParser.
 		spec group: 'plugin' with: #( 'OpenPonk-UML-DI' ).
 		spec group: 'default' with: #( 'OpenPonk' 'plugin' ) ]
