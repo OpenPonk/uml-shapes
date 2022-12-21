@@ -16,10 +16,6 @@ BaselineOfUMLShapes >> baseline: spec [
 			spec
 				repository: 'github://OpenPonk/Roassal2:Pharo10';
 				loads: 'Core' ].
-		spec baseline: 'Roassal3' with: [ 
-			spec
-				repository: 'github://ObjectProfile/Roassal3:v0.9.9k';
-				loads: #( Full ) ].
 		spec
 			baseline: 'SynchronizedLinks'
 			with: [ 
@@ -29,8 +25,8 @@ BaselineOfUMLShapes >> baseline: spec [
 			with: [ spec repository: 'github://openponk/openponk:dev-roassal3' ].
 		spec
 			package: 'OpenPonk-UML-DI'
-			with: [ spec requires: #( 'Roassal2' 'Roassal3' 'SynchronizedLinks' ) ];
-			preLoadDoIt: #loadPetitParser.
+			with: [ spec requires: #( 'Roassal2' 'SynchronizedLinks' ) ];
+			preLoadDoIt: #loadPetitParserAndRoassal3.
 		spec group: 'plugin' with: #( 'OpenPonk-UML-DI' ).
 		spec group: 'default' with: #( 'OpenPonk' 'plugin' ) ]
 ]
@@ -47,4 +43,32 @@ BaselineOfUMLShapes >> loadPetitParser [
 		load:
 			#( 'Core' 'Tests' 'Examples' 'Islands' 'Analyzer' 'Preprocessor'
 			   'Indent' 'Extension' 'TestsExtension' 'Parser' )
+]
+
+{ #category : #'as yet unclassified' }
+BaselineOfUMLShapes >> loadPetitParserAndRoassal3 [
+
+	"PetitParser is not needed by core OP. It is needed by BormEditor, but due to Pharo bug https://github.com/pharo-project/pharo/issues/9913 it must be always loaded before Roassal in Pharo 10"
+
+	self
+		loadPetitParser;
+		loadRoassal3
+]
+
+{ #category : #'as yet unclassified' }
+BaselineOfUMLShapes >> loadRoassal3 [
+
+	"Roassal3 needs to be loaded this way because different version of it is already included in Pharo 10+"
+
+	Smalltalk at: #BaselineOfRoassal3Exporters ifPresent: [ ^ self ].
+	Metacello new
+		baseline: 'Roassal3';
+		repository: 'github://ObjectProfile/Roassal3:v0.9.9k';
+		lock;
+		onConflictUseIncoming;
+		load: #Full.
+	Metacello new
+		baseline: 'Roassal3Exporters';
+		repository: 'github://ObjectProfile/Roassal3Exporters:f2f81e9';
+		load
 ]
