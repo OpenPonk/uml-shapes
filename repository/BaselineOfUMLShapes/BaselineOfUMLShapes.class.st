@@ -61,12 +61,14 @@ BaselineOfUMLShapes >> loadRoassal3 [
 	"Roassal3 needs to be loaded this way because different version of it is already included in Pharo 10+"
 
 	Smalltalk at: #BaselineOfRoassal3Exporters ifPresent: [ ^ self ].
+	[ 
 	Metacello new
 		baseline: 'Roassal3';
 		repository: 'github://ObjectProfile/Roassal3:v0.9.9k';
 		lock;
-		onConflictUseIncoming;
-		load: #Full.
+		load: #Full ]
+		on: MCMergeOrLoadWarning
+		do: [ :warning | warning load ].
 	Metacello new
 		baseline: 'Roassal3Exporters';
 		repository: 'github://ObjectProfile/Roassal3Exporters:f2f81e9';
