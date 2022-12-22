@@ -1,7 +1,7 @@
 Class {
 	#name : #OPUmlCompartmentableShapeTest,
 	#superclass : #OPDITestCase,
-	#category : 'OpenPonk-UML-DI-Tests'
+	#category : #'OpenPonk-UML-DI-Tests'
 }
 
 { #category : #accessing }
@@ -51,13 +51,13 @@ OPUmlCompartmentableShapeTest >> testFigures3 [
 
 { #category : #tests }
 OPUmlCompartmentableShapeTest >> testRemoveExtentChanged [
-	| compartment compLbl view fullExtent |
+	| compartment compLbl canvas fullExtent |
 	OPUmlNameLabel new owningElement: element.
 	compartment := OPUmlCompartment new.
 	compartment owningElement: element.
 	5 timesRepeat: [ (compLbl := OPUmlLabel new) owningElement: compartment ].
-	view := RTView new.
-	element renderIn: view.
+	canvas := RSCanvas new.
+	element renderIn: canvas.
 	fullExtent := element extent.
 	compLbl remove.
 	self assert: element extent y < fullExtent y
@@ -74,26 +74,26 @@ OPUmlCompartmentableShapeTest >> testRemoveFromOwnership [
 
 { #category : #tests }
 OPUmlCompartmentableShapeTest >> testRemoveFromViewEmpty [
-	| view |
-	view := RTView new.
-	element renderIn: view.
+	| canvas |
+	canvas := RSCanvas new.
+	element renderIn: canvas.
 	element remove.
-	self assert: view elements asArray equals: #()
+	self assert: canvas elements asArray equals: #()
 ]
 
 { #category : #tests }
 OPUmlCompartmentableShapeTest >> testRemoveFromViewRich [
-	| view lbl comp compLbl |
+	| canvas lbl comp compLbl |
 	element := OPUmlClassifierShape new.
 	lbl := OPUmlNameLabel new.
 	lbl owningElement: element.
 	comp := OPUmlCompartment new.
 	comp owningElement: element.
 	(compLbl := OPUmlLabel new) owningElement: comp.
-	view := RTView new.
-	element renderIn: view.
+	canvas := RSCanvas new.
+	element renderIn: canvas.
 	element remove.
-	self assert: view elements asArray equals: #()
+	self assert: canvas elements asArray equals: #()
 ]
 
 { #category : #tests }
