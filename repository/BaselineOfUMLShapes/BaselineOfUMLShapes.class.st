@@ -64,7 +64,8 @@ BaselineOfUMLShapes >> loadRoassal3 [
 	[ 
 	Metacello new
 		baseline: 'Roassal3';
-		repository: 'github://ObjectProfile/Roassal3:v0.9.9k';
+		"repository: 'github://ObjectProfile/Roassal3:v0.9.9k';"
+		repository: 'github://OpenPonk/Roassal3';
 		lock;
 		load: #Full ]
 		on: MCMergeOrLoadWarning
