@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #'Roassal2 - manipulation' }
-OPUmlMultilineNameLabel >> createRtElement [
+OPUmlMultilineNameLabel >> createRoassalShape [
 	^ OPRTStyledMultilineLabel new
 		fontSize: #fontSize;
 		color: #fontColor;

@@ -1,6 +1,6 @@
 Class {
 	#name : #OPUmlCompartment,
-	#superclass : #OPUmlDiagramElement,
+	#superclass : #OPDIDiagramElement,
 	#instVars : [
 		'rtElement'
 	],
@@ -13,7 +13,7 @@ OPUmlCompartment >> compartmentedShape [
 ]
 
 { #category : #'Roassal2 - drawing' }
-OPUmlCompartment >> createRtElement [
+OPUmlCompartment >> createRoassalShape [
 	^ RTSVGPath new
 		path: 'L 0 0';
 		borderColor: self style strokeColor;
@@ -28,7 +28,7 @@ OPUmlCompartment >> remove [
 
 { #category : #'Roassal2 - drawing' }
 OPUmlCompartment >> rtElement [
-	^ rtElement ifNil: [ rtElement := self createRtElement ]
+	^ rtElement ifNil: [ rtElement := self createRoassalShape ]
 ]
 
 { #category : #'Roassal2 - updating' }

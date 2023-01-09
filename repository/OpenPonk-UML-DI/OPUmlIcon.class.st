@@ -10,7 +10,7 @@ Class {
 }
 
 { #category : #'Roassal2 - manipulation' }
-OPUmlIcon >> createRtElement [
+OPUmlIcon >> createRoassalShape [
 	^ RTBitmap new
 		form: self form;
 		extent: 32@32"self form extent";

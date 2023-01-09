@@ -5,7 +5,7 @@ Class {
 		'text',
 		'emphasis'
 	],
-	#category : 'OpenPonk-UML-DI-UML'
+	#category : #'OpenPonk-UML-DI-UML'
 }
 
 { #category : #accessing }
@@ -20,7 +20,7 @@ OPUmlLabel >> changed [
 ]
 
 { #category : #'Roassal2 - manipulation' }
-OPUmlLabel >> createRtElement [
+OPUmlLabel >> createRoassalShape [
 	^ RTStyledLabel new
 		height: #fontSize;
 		color: #fontColor;

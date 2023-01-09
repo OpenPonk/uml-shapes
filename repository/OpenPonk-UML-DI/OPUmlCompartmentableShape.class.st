@@ -21,7 +21,7 @@ OPUmlCompartmentableShape >> compartments [
 ]
 
 { #category : #'Roassal2 - manipulation' }
-OPUmlCompartmentableShape >> createRtElement [
+OPUmlCompartmentableShape >> createRoassalShape [
 	^ RTBox new
 		size: 0;
 		color: [ :model | model style fillColor ];

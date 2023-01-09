@@ -1,6 +1,6 @@
 Class {
 	#name : #OPUmlShape,
-	#superclass : #OPUmlDiagramElement,
+	#superclass : #OPDIShape,
 	#instVars : [
 		'rtElement'
 	],
@@ -20,7 +20,7 @@ OPUmlShape >> changed: aParameter [
 ]
 
 { #category : #'Roassal2 - manipulation' }
-OPUmlShape >> createRtElement [
+OPUmlShape >> createRoassalShape [
 	^ self subclassResponsibility
 ]
 
@@ -61,7 +61,7 @@ OPUmlShape >> renderIn: aView [
 
 { #category : #'Roassal2 - accessing' }
 OPUmlShape >> rtElement [
-	^ rtElement ifNil: [ rtElement := self createRtElement ]
+	^ rtElement ifNil: [ rtElement := self createRoassalShape ]
 ]
 
 { #category : #Roassal2 }

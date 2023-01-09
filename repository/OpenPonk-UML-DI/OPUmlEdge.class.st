@@ -1,10 +1,7 @@
 Class {
 	#name : #OPUmlEdge,
-	#superclass : #OPUmlDiagramElement,
+	#superclass : #OPDIEdge,
 	#instVars : [
-		'source',
-		'target',
-		'waypoints',
 		'rtEdge',
 		'headDecorator',
 		'tailDecorator',

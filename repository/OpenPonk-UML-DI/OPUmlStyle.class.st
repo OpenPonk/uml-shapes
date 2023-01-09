@@ -1,27 +1,8 @@
 Class {
 	#name : #OPUmlStyle,
 	#superclass : #OPDIStyle,
-	#instVars : [
-		'properties'
-	],
-	#category : 'OpenPonk-UML-DI-UML'
+	#category : #'OpenPonk-UML-DI-UML'
 }
-
-{ #category : #accessing }
-OPUmlStyle >> at: aSymbol [
-	^ properties
-		at: aSymbol
-		ifAbsent:
-			[ 
-			self styledElement sharedStyle = self
-				ifTrue: [ self styledElement owningElement sharedStyle at: aSymbol ]
-				ifFalse: [ self styledElement sharedStyle at: aSymbol ] ]
-]
-
-{ #category : #accessing }
-OPUmlStyle >> at: aSymbol put: aValue [
-	properties at: aSymbol put: aValue
-]
 
 { #category : #accessing }
 OPUmlStyle >> fillColor [
@@ -111,17 +92,6 @@ OPUmlStyle >> fontUnderline [
 { #category : #accessing }
 OPUmlStyle >> fontUnderline: aBoolean [
 	self at: #fontUnderline put: aBoolean
-]
-
-{ #category : #initialization }
-OPUmlStyle >> initialize [
-	super initialize.
-	properties := Dictionary new
-]
-
-{ #category : #removing }
-OPUmlStyle >> removeKey: aSymbol [
-	^ properties removeKey: aSymbol
 ]
 
 { #category : #accessing }
