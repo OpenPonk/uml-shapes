@@ -67,7 +67,7 @@ OPUmlEdge >> initialize [
 	source := nil.
 	target := nil.
 	waypoints := OrderedCollection new.
-	(localStyle := OPUmlStyle new)
+	(localStyle := OPDIOpenPonkStyle new)
 		strokeColor: Color black;
 		strokeWidth: 1
 ]

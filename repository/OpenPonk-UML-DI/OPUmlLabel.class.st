@@ -1,10 +1,6 @@
 Class {
 	#name : #OPUmlLabel,
-	#superclass : #OPUmlShape,
-	#instVars : [
-		'text',
-		'emphasis'
-	],
+	#superclass : #OPDILabel,
 	#category : #'OpenPonk-UML-DI-UML'
 }
 
@@ -66,7 +62,7 @@ OPUmlLabel >> fontSize [
 { #category : #'as yet unclassified' }
 OPUmlLabel >> initialize [
 	super initialize.
-	(sharedStyle := OPUmlStyle new)
+	(sharedStyle := OPDIOpenPonkStyle new)
 		fontName: 'Source Sans Pro';
 		fontSize: 10;
 		fontColor: Color black;

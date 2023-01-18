@@ -28,7 +28,7 @@ OPUmlClassifierShape >> initialize [
 	commentIcon := OPUmlIcon new.
 	commentIcon display: [ self hasComments ].
 	commentIcon form: (self iconNamed: #announcement).
-	commentIcon localStyle: OPUmlStyle new.
+	commentIcon localStyle: OPDIOpenPonkStyle new.
 	commentIcon owningElement: self.
 	commentBlock := #()
 ]

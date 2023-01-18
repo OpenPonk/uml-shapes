@@ -1,7 +1,7 @@
 Class {
 	#name : #OPUmlShapeExamples,
 	#superclass : #RTAbstractExample,
-	#category : 'OpenPonk-UML-DI-Examples'
+	#category : #'OpenPonk-UML-DI-Examples'
 }
 
 { #category : #'as yet unclassified' }
@@ -41,7 +41,7 @@ OPUmlShapeExamples >> exampleClassifier [
 el := OPUmlClassifierShape new.
 lbl := OPUmlNameLabel new.
 lbl text: 'Name'.
-lbl localStyle: (OPUmlStyle new fontSize: 11).
+lbl localStyle: (OPDIOpenPonkStyle new fontSize: 11).
 lbl owningElement: el.
 comp := OPUmlCompartment new.
 comp owningElement: el.
@@ -144,7 +144,7 @@ OPUmlShapeExamples >> exampleLabel [
 v := RTView new.
 
 el1 := OPUmlNameLabel new
-	localStyle: (OPUmlStyle new
+	localStyle: (OPDIOpenPonkStyle new
 		fontBold: true;
 		fontItalic: true;
 		fontColor: Color red
@@ -152,7 +152,7 @@ el1 := OPUmlNameLabel new
 	text: 'hello'.
 
 el2 := OPUmlNameLabel new
-	localStyle: (OPUmlStyle new
+	localStyle: (OPDIOpenPonkStyle new
 		fontUnderline: true;
 		fontSize: 15
 	);
@@ -274,7 +274,7 @@ el := OPUmlClassifierShape new.
 el sharedStyle fillColor: c; strokeColor: c muchDarker.
 lbl := OPUmlNameLabel new.
 lbl text: c asString.
-lbl localStyle: (OPUmlStyle new fontSize: 11).
+lbl localStyle: (OPDIOpenPonkStyle new fontSize: 11).
 lbl owningElement: el.
 comp := OPUmlCompartment new.
 comp owningElement: el.

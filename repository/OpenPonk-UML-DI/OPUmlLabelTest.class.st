@@ -1,7 +1,7 @@
 Class {
 	#name : #OPUmlLabelTest,
 	#superclass : #OPDITestCase,
-	#category : 'OpenPonk-UML-DI-Tests'
+	#category : #'OpenPonk-UML-DI-Tests'
 }
 
 { #category : #tests }
@@ -31,7 +31,7 @@ OPUmlLabelTest >> testRtElement [
 { #category : #tests }
 OPUmlLabelTest >> testRtEmphasis [
 	element text: 'some text'.
-	element localStyle: OPUmlStyle new.
+	element localStyle: OPDIOpenPonkStyle new.
 	rt := element rtElement.
 	self assertCollection: (rt shape emphasisFor: rt) hasSameElements: #().
 
@@ -61,7 +61,7 @@ OPUmlLabelTest >> testRtEmphasisUpdate [
 		emphasis: [ :model :localStyle | 
 			localStyle fontBold: model first.
 			localStyle fontItalic: model second ].
-	element localStyle: OPUmlStyle new.
+	element localStyle: OPDIOpenPonkStyle new.
 	element modelElement: #(true true).
 	rt := element rtElement.
 	self

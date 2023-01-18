@@ -1,12 +1,12 @@
 Class {
 	#name : #OPUmlStyleTest,
 	#superclass : #OPDITestCase,
-	#category : 'OpenPonk-UML-DI-Tests'
+	#category : #'OpenPonk-UML-DI-Tests'
 }
 
 { #category : #accessing }
 OPUmlStyleTest >> elementClass [
-	^ OPUmlStyle
+	^ OPDIOpenPonkStyle
 ]
 
 { #category : #accessing }
@@ -26,15 +26,15 @@ OPUmlStyleTest >> testPropertyInheritance [
 	| a b aStyle bShared bLocal |
 	a := OPUmlDiagramElement new.
 	(b := OPUmlDiagramElement new) owningElement: a.
-	(aStyle := OPUmlStyle new) fontSize: 15.
+	(aStyle := OPDIOpenPonkStyle new) fontSize: 15.
 	a sharedStyle: aStyle.
 	self assert: b style fontSize equals: 15.
-	bShared := OPUmlStyle new.
+	bShared := OPDIOpenPonkStyle new.
 	b sharedStyle: bShared.
 	self assert: b style fontSize equals: 15.
 	bShared fontSize: 20.
 	self assert: b style fontSize equals: 20.
-	bLocal := OPUmlStyle new.
+	bLocal := OPDIOpenPonkStyle new.
 	b localStyle: bLocal.
 	self assert: b style fontSize equals: 20.
 	bLocal fontSize: 25.
@@ -65,7 +65,7 @@ OPUmlStyleTest >> testSharedStyleOverriden [
 	a sharedStyle: element.
 	self assert: a style equals: element.
 	self assert: b style equals: element.
-	newStyle := OPUmlStyle new.
+	newStyle := OPDIOpenPonkStyle new.
 	b localStyle: newStyle.
 	self assert: b style equals: newStyle.
 	self assert: b sharedStyle equals: element
