@@ -1,6 +1,6 @@
 Class {
 	#name : #OPUmlShape,
-	#superclass : #OPDIShape,
+	#superclass : #OPShape,
 	#instVars : [
 		'rtElement'
 	],

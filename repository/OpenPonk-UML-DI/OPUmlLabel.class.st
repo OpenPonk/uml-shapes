@@ -1,6 +1,6 @@
 Class {
 	#name : #OPUmlLabel,
-	#superclass : #OPDILabel,
+	#superclass : #OPLabel,
 	#category : #'OpenPonk-UML-DI-UML'
 }
 

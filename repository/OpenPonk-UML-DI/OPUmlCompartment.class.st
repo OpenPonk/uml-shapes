@@ -1,6 +1,6 @@
 Class {
 	#name : #OPUmlCompartment,
-	#superclass : #OPDIDiagramElement,
+	#superclass : #OPDiagramElement,
 	#instVars : [
 		'rtElement'
 	],

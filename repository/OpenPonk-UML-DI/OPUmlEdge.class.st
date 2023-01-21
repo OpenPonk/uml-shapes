@@ -1,6 +1,6 @@
 Class {
 	#name : #OPUmlEdge,
-	#superclass : #OPDIEdge,
+	#superclass : #OPEdge,
 	#instVars : [
 		'rtEdge',
 		'headDecorator',
